@@ -8,8 +8,14 @@ Users stories
 
 ```
 As as a user
-So that I can store my favourite websites
+So that I can access my favourite websites
 I would like to see a list of bookmarks
+```
+
+```
+As as a user
+So that I can add more of my favourite websites
+I would like to create bookmarks
 ```
 
 ## Database Setup
