@@ -31,6 +31,6 @@ class Bookmark
     end
 
     result = conn.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, url, title")
-      Bookmark.new(id: result[0]['id'], url: result[0]['url'], title: result[0]['title'])
+    Bookmark.new(id: result[0]['id'], url: result[0]['url'], title: result[0]['title'])
   end
 end
