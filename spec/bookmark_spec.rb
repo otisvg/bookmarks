@@ -15,8 +15,6 @@ describe Bookmark do
       expect(bookmark.id).to eq bookmark.id
       expect(bookmark.title).to eq 'Developer Blogs'
       expect(bookmark.url).to eq 'https://dev.to/'
-
-
     end
   end
   describe '.create' do
