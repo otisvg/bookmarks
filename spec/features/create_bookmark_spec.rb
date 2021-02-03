@@ -1,5 +1,5 @@
 feature 'creating bookmarks' do
-  scenario 'creating a new bookmark' do
+  scenario 'user can create a new bookmark' do
 
     visit('/bookmarks/new')
     fill_in 'url', with: 'https://dev.to'
