@@ -2,6 +2,7 @@ require 'bookmark'
 require 'database_helpers'
 
 describe Bookmark do
+
   describe '.all' do
     it 'returns all bookmarks' do
       bookmark = Bookmark.create(url: "https://dev.to/", title: "Developer Blogs")
@@ -17,6 +18,7 @@ describe Bookmark do
       expect(bookmark.url).to eq 'https://dev.to/'
     end
   end
+
   describe '.create' do
     it 'creates a bookmark' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
@@ -28,6 +30,7 @@ describe Bookmark do
       expect(bookmark.url).to eq 'http://www.testbookmark.com'
     end 
   end
+
   describe '.delete' do
     it 'deletes a bookmark' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
@@ -36,5 +39,17 @@ describe Bookmark do
 
       expect(Bookmark.all.length).to eq 0
     end 
+  end
+
+  describe '.update' do
+    it 'updates the bookmark with the given data' do
+      bookmark = Bookmark.create(url: 'http://www.otis.com', title: 'Makers Academy')
+      updated_bookmark = Bookmark.update(id: bookmark.id, url: 'http://www.nototis.com', title: 'not otis')
+
+      expect(updated_bookmark).to be_a Bookmark
+      expect(updated_bookmark.id).to eq bookmark.id
+      expect(updated_bookmark.title).to eq 'not otis'
+      expect(updated_bookmark.url).to eq 'http://www.nototis.com'
+    end
   end
 end
