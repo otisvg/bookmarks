@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/flash'
-require './lib/bookmark'
-require './database_connection_setup'
+require_relative './lib/bookmark'
+require_relative './database_connection_setup.rb'
 require 'uri'
 
 class BookmarkManager < Sinatra::Base

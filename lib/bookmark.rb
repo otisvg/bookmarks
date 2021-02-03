@@ -1,6 +1,7 @@
-require 'pg'
-require 'database_connection'
+require_relative 'database_connection'
 require 'uri'
+
+
 
 class Bookmark
   attr_reader :id, :title, :url
