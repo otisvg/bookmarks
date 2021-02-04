@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'bookmark'
 require 'database_helpers'
 
 describe Bookmark do
-
   describe '.all' do
     it 'returns all bookmarks' do
-      bookmark = Bookmark.create(url: "https://dev.to/", title: "Developer Blogs")
-      Bookmark.create(url: "https://www.edx.org/course", title: "edx courses")
-      Bookmark.create(url: "http://www.google.com", title: "Google")
-      
+      bookmark = Bookmark.create(url: 'https://dev.to/', title: 'Developer Blogs')
+      Bookmark.create(url: 'https://www.edx.org/course', title: 'edx courses')
+      Bookmark.create(url: 'http://www.google.com', title: 'Google')
+
       bookmarks = Bookmark.all
 
       expect(bookmarks.length).to eq 3
@@ -28,7 +29,7 @@ describe Bookmark do
       expect(bookmark.id).to eq persisted_data['id']
       expect(bookmark.title).to eq 'Test Bookmark'
       expect(bookmark.url).to eq 'http://www.testbookmark.com'
-    end 
+    end
     it 'does not create a new bookmark if the URL is not valid' do
       Bookmark.create(url: 'not a real bookmark hehe', title: 'not a real bookmark hehe')
       expect(Bookmark.all).to be_empty
@@ -38,11 +39,11 @@ describe Bookmark do
   describe '.delete' do
     it 'deletes a bookmark' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
-      
+
       Bookmark.delete(id: bookmark.id)
 
       expect(Bookmark.all.length).to eq 0
-    end 
+    end
   end
 
   describe '.update' do

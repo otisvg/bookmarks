@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 feature 'viewing bookmarks' do
   scenario 'visiting bookmarks page' do
-    
     Bookmark.create(url: 'https://www.edx.org/course', title: 'edx courses')
     Bookmark.create(url: 'https://ktt2.com/music', title: 'music forum')
     Bookmark.create(url: 'https://www.reddit.com', title: 'reddit ')
@@ -11,5 +12,4 @@ feature 'viewing bookmarks' do
     expect(page).to have_link('music forum',  href: 'https://ktt2.com/music')
     expect(page).to have_link('reddit', href: 'https://www.reddit.com')
   end
- end
-
+end
