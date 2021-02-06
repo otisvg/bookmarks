@@ -17,6 +17,16 @@ As as a user
 So that I can add more of my favourite websites
 I would like to create bookmarks
 ```
+```
+As as a user
+So that I can remove websites
+I would like to delete bookmarks
+```
+```
+As as a user
+So that I can edit my favourite websites
+I would like to update bookmarks
+```
 
 ## Database Setup
 
